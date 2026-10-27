@@ -109,7 +109,7 @@ $('spin').onclick=()=>{const L=getNames();if(L.length<2||spinning){$('win').text
  (function f(now){const u=Math.min(1,(now-t0)/D),e=1-Math.pow(1-u,3);rot=start+tot*e;draw(rot);
   const idx=Math.floor((((-Math.PI/2-rot)%(2*Math.PI))+2*Math.PI)%(2*Math.PI)/seg);if(idx!==last){last=idx;tick()}
   if(u<1)requestAnimationFrame(f);else{spinning=false;$('win').textContent='🎉 '+L[idx];logGame({g:'wheel',w:L[idx]});$('win').classList.remove('pop');void $('win').offsetWidth;$('win').classList.add('pop');fan()}})(t0)};
-const P=[['Your name','إسمك'],['Something you love','حاجة تحبها'],['Something you fear','حاجة تخاف منها'],['Something you wish for','حاجة تتمناها']];
+const P=[["What's one imperfection you see in yourself?", "إيه جانب عدم الكمال اللي بتشوفه في نفسك؟"], ["What contradictions do you notice within yourself?", "ما التناقضات التي تلاحظها داخل نفسك؟"], ["What strengths or resources can you draw on when facing a challenge?", "ما نقاط القوة أو الموارد التي يمكنك الاستعانة بها عندما تواجه تحديًا؟"]];
 $('askb').onclick=()=>{const p=P[Math.floor(Math.random()*P.length)];$('ask').innerHTML=p[0]+'<small>'+p[1]+'</small>';$('ask').classList.remove('pop');void $('ask').offsetWidth;$('ask').classList.add('pop');tone(660,0,.2,'triangle');tone(990,.1,.3,'triangle')};
 // squads
 const ADJ=['Brave','Bright','Bold','Rising','Golden','Fearless','Unstoppable','Inspired','Mighty','Daring'],NOUN=['Phoenix','Titans','Falcons','Nova','Atlas','Lynx','Orion','Comets','Vanguard','Legends'],SC=['#ff3d6e','#8f4dff','#e0a000','#17a8f0','#3fae1a','#ff7a1a'];
